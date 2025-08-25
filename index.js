@@ -11,16 +11,12 @@ const app = express();
 app.use(express.json()); 
 app.use(cookieParser());
 app.use(morgan('dev'));
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-  })
-);
+ 
+ 
 app.use('/generated_qrcodes', express.static(path.join(__dirname, 'generated_qrcodes')));
-// app.use(
-//   cors()
-// );
+app.use(
+  cors()
+);
 
 
 
